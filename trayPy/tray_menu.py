@@ -3,14 +3,18 @@
 
 __author__ = "Robin 'r0w' Weiland"
 __date__ = "2020-03-02"
-__version__ = "0.0.0"
+__version__ = "0.1.0"
+
+"""Library for creating system tray applications
+Based on Moses Palmér's 'pystray' library
+See README for insntructions"""
 
 __all__ = ('TrayMenu',)
 
 from typing import List, Callable
 from pystray import MenuItem, Menu
-from src.items import RadioButtonGroup
-from src.items import SubMenu
+from trayPy.items import RadioButtonGroup
+from trayPy.items import SubMenu
 
 
 class TrayMenu:
