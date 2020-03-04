@@ -7,6 +7,10 @@ __version__ = "0.0.0"
 
 __all__ = ('TrayApp',)
 
+"""Library for creating system tray applications
+Based on Moses Palmér's 'pystray' library
+See README for insntructions"""
+
 from .tray_app import TrayApp
 
 if __name__ == '__main__': pass

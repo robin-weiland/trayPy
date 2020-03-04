@@ -11,18 +11,18 @@ from pystray import MenuItem
 
 
 class SubMenu:
+    __slots__ = ('text', 'parent', 'menu')
+
     def __init__(self, parent: 'TrayMenu', text: str):
-        self.menu: MenuItem = MenuItem(text=text)
+        self.text: str = text
         self.parent: 'TrayMenu' = parent
+        self.menu: 'TrayMenu' = parent.__class__()  # oof, this looks rather awful
 
-    def __enter__(self): return self.menu
+    def __enter__(self) -> 'TrayMenu': return self.menu
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if exc_type is not None: self.parent.items.append(self.menu)
-
-    def __getattribute__(self, item):
-        try: super().__getattribute__(item)
-        except AttributeError: getattr(self.menu, item)
+    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+        if not exc_type:
+            self.parent.add(MenuItem(text=self.text, action=self.menu()))
 
 
 if __name__ == '__main__': pass

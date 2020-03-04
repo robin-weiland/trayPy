@@ -18,14 +18,14 @@ class RadioButtonGroup:
     def __init__(self, menu, *items):
         self.menu: 'Menu' = menu
         self.items: List = list()
-        self.items.extend(items)
+        not items or self.items.extend(*items)
 
     def __bool__(self): return bool(self.items)
 
     def __enter__(self): return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if exc_type is None: self.menu.items.extend(self.items)
+        if exc_type is None: self.menu.add(*self.items)
 
     @property
     def get(self):
@@ -43,10 +43,9 @@ class RadioButtonGroup:
             RadioButtonGroup.state = index
         return inner
 
-    def add(self, text: str, default: bool = False):
+    def add(self, text: str, selected: bool = False):
         index: int = len(self.items)
-        print(index)
-        if default: self.state = index
+        if selected: RadioButtonGroup.state = index
         btn: MenuItem = MenuItem(
             text=text,
             action=RadioButtonGroup.set_state(index),
