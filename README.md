@@ -1,12 +1,12 @@
 
-#TrayApp
+# TrayApp
 
 **based on Moses Palmér's [_pystray_](https://pypi.org/project/pystray/) library!**
 
 Simple library for creating system tray applications.
 
 
-###Usage
+### Usage
 
 
     with TrayApp(name='Test',  # the little tooltip, seen when hovering over the icon
@@ -77,7 +77,7 @@ RadioButtonGroup example:
         app.add_button(text='print the selected', action=print_selected, args=(rbg,), default=False)
         
         
-###License
+### License
 
 
 MIT, see the LICENSE file
