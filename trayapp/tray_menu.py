@@ -3,18 +3,18 @@
 
 __author__ = "Robin 'r0w' Weiland"
 __date__ = "2020-03-02"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 """Library for creating system tray applications
-Based on Moses Palmér's 'pystray' library
+based on Moses Palmér's 'pystray' library
 See README for insntructions"""
 
 __all__ = ('TrayMenu',)
 
 from typing import List, Callable
 from pystray import MenuItem, Menu
-from trayPy.items import RadioButtonGroup
-from trayPy.items import SubMenu
+from trayapp.items import RadioButtonGroup
+from trayapp.items import SubMenu
 
 
 class TrayMenu:
@@ -38,8 +38,9 @@ class TrayMenu:
 
     def add(self, *items) -> None: self.items.extend(items)
 
-    def add_button(self, text: str, action: Callable, args=None, default=False) -> MenuItem:
-        self.add(btn := MenuItem(text=text, action=lambda: action(*(args or ())), default=default))
+    def add_button(self, text: str, action: Callable, args=None,
+                   default: bool = False, checked: bool = lambda icon: False) -> MenuItem:
+        self.add(btn := MenuItem(text=text, action=lambda: action(*(args or ())), default=default, checked=checked))
         return btn
 
     def add_submenu(self, text: str) -> SubMenu:

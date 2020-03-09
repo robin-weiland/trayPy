@@ -1,10 +1,14 @@
-#TrayPy
 
-**Based on Moses Palmér's [_pystray_](https://pypi.org/project/pystray/) library!**
+#TrayApp
+
+**based on Moses Palmér's [_pystray_](https://pypi.org/project/pystray/) library!**
 
 Simple library for creating system tray applications.
 
+
 ###Usage
+
+
     with TrayApp(name='Test',  # the little tooltip, seen when hovering over the icon
                  icon_path=Path('../path/to/the/image.png'),  # anything that can be transformed into a PIL.Image
                  icon_size=(256, 256,)  # size to create the thumbnail
@@ -74,4 +78,6 @@ RadioButtonGroup example:
         
         
 ###License
-MIT, see LICENSE.txt
+
+
+MIT, see the LICENSE file
