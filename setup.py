@@ -18,7 +18,7 @@ if __name__ == '__main__':
     setup(
         name='trayapp',
         packages=find_packages(),
-        version='0.1.1',
+        version='0.1.2',
         license='MIT',
         description="Library for creating system tray applications, based on Moses Palmér's 'pystray' library",
         long_description=long_description,

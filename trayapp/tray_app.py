@@ -3,7 +3,7 @@
 
 __author__ = "Robin 'r0w' Weiland"
 __date__ = "2020-03-02"
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 """Library for creating system tray applications
 based on Moses Palmér's 'pystray' library
@@ -44,7 +44,7 @@ class TrayApp:
     def __bool__(self): return self.app.visible
 
     def set_icon(self, icon_or_path: Union[str, Path, type(Image)], icon_size: Tuple[int, int]):
-        if isinstance(icon_or_path, Icon):
+        if not isinstance(icon_or_path, (Path, str)):
             (image := icon_or_path).thumbnail(icon_size)
         elif not (icon_or_path := Path(icon_or_path)).exists():
             raise FileNotFoundError(f'Could not find image: "{icon_or_path}"')

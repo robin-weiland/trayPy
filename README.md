@@ -5,9 +5,11 @@
 
 Simple library for creating system tray applications.
 
+[![PyPI version](https://badge.fury.io/py/trayapp.svg)](https://badge.fury.io/py/trayapp)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
+
 
 ### Usage
-
 
     with TrayApp(name='Test',  # the little tooltip, seen when hovering over the icon
                  icon_path=Path('../path/to/the/image.png'),  # anything that can be transformed into a PIL.Image
@@ -47,7 +49,6 @@ Simple library for creating system tray applications.
             rbg.add(text='hello')
             rbg.add(text='world', selected=True)  # selected determines the item which is selected on creation
             
-            
 RadioButtonGroup example:
 
     items = (
@@ -78,6 +79,5 @@ RadioButtonGroup example:
         
         
 ### License
-
 
 MIT, see the LICENSE file
