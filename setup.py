@@ -25,7 +25,7 @@ if __name__ == '__main__':
         long_description_content_type='text/markdown',
         author=__author__,
         author_email='robin.weiland@gmx.de',
-        url='https://github.com/user/RoW171',
+        url='https://github.com/RoW171/trayPy',
         keywords=['systemtray', 'tray', 'app'],
         requires=requirements,
         classifiers=[
